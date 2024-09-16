@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./api";
-import { Header } from "./components";
-import TranslationsProvider from "../../i18nProvider";
+import i18nConfig from "@/app/i18nConfig";
+import { queryClient } from "@/api";
+import {
+  FeaturedProducts,
+  Footer,
+  Header,
+  Hero,
+  SubsribeSection,
+} from "@/components";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
+export function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,18 +28,15 @@ interface RootLayoutProps {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
   return (
-    <html lang={locale || "en"}>
+    <html lang={locale}>
       <body>
         <QueryClientProvider client={queryClient}>
-          <TranslationsProvider locale={locale}>
-            <Header />
-            <main>{children}</main>
-          </TranslationsProvider>
+          {children}
         </QueryClientProvider>
       </body>
     </html>

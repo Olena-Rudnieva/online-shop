@@ -1,0 +1,34 @@
+{
+  "navigation": {
+    "home": "Домашня сторінка",
+    "catalog": "Каталог"
+  },
+  "home": {
+    "hero_title": "Dyson",
+    "hero_text": "пропонує",
+    "featured_products_title": "Рекомендовані продукти",
+    "subscribe": "Підпишіться на нашу розсилку",
+    "currency": "UAH",  
+    "items": {
+      "media_one": "/images/productCard1.svg",
+      "title_one": "Приклад title",
+      "price_one": "19.99",
+      "media_two": "/images/productCard2.svg",
+      "title_two": "Приклад title",
+      "price_two": "19.99",
+      "media_three": "/images/productCard3.svg",
+      "title_three": "Приклад title",
+      "price_three": "19.99",
+      "media_four": "/images/productCard4.svg",
+      "title_four": "Приклад title",
+      "price_four": "19.99"
+    }
+  },
+  "catalog": {
+    "filters": "Фільтри"
+  },
+  "footer": {
+    "copyrights": "© 2024, Dyson Store Powered by Shopify",
+    "policy": "Privacy policy"
+  }
+}

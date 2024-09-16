@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,8 +12,14 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customGray: "rgba(255, 255, 255, 0.24)",
+        customGray: "rgba(18, 18, 18, 0.75)",
+        customDarkGray: "rgb(18, 18, 18)",
+        customWhite: "rgba(255, 255, 255, 0.7)",
+        overlay: "rgba(30, 30, 30, 0.4)",
       },
+      backgroundImage: {       
+        bgImage: "url('/images/bgImage.svg')", 
+      }
     },
   },
   plugins: [],
