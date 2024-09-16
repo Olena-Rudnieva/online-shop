@@ -26,6 +26,10 @@ export interface Token {
 
 export interface Product {
   title: string;
-  price: number;
-  image: string; 
+  description?: string
+  price: string; //number
+  media: string; 
+  category?: string;
+  compareAtPrice?: number
+  quantity?: number
 }

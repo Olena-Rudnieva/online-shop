@@ -36,7 +36,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     ".next/types/**/*.ts"
- ],
+, "src/app/i18n.ts", "src/providers/translationsProvider.tsx" ],
   "exclude": [
     "node_modules"
   ]

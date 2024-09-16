@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const SubsribeSection = () => {
   const [email, setEmail] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+
+  const { t } = useTranslation();
 
   const handleSubscribe = () => {
     if (email) {
@@ -25,7 +28,7 @@ export const SubsribeSection = () => {
     <div className="relative w-full flex justify-center">
       <div className="px-[30px] md:px-[32px] lg:px-[50px] pt-[20px] lg:pt-[36px] pb-[30px] lg:pb-[50px] flex flex-col justify-centerc items-center  w-full max-w-[1200px]">
         <h2 className="text-foreground text-[18px] leading-[23px] tracking-[0.6px] mb-[20px] text-center">
-          Subscribe to our email
+          {t("home.subscribe")}
         </h2>
         <div className="relative flex items-center w-full max-w-[400px]">
           <input

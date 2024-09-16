@@ -1,9 +1,8 @@
-// import { useTranslation } from "react-i18next";
 import Link from "next/link";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export const HeaderNavigation = ({ sx }: { sx?: string }) => {
-  // const { t } = useTranslation("translate");
+  const { t } = useTranslation();
 
   return (
     <div className={`flex gap-[24px] items-center ${sx}`}>
@@ -12,15 +11,13 @@ export const HeaderNavigation = ({ sx }: { sx?: string }) => {
         href="/"
         className="text-customGray  text-[14px] leading-[18px] tracking-[0.6px]"
       >
-        {/* {t("navigation.home")} */}
-        Home
+        {t("navigation.home")}
       </Link>
       <Link
         href="/about"
         className="text-customGray text-[14px] leading-[18px] tracking-[0.6px]"
       >
-        {/* {t("navigation.catalog")} */}
-        Catalog
+        {t("navigation.catalog")}
       </Link>
     </div>
   );

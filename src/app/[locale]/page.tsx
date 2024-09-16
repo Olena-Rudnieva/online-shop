@@ -1,3 +1,6 @@
+"use client";
+
+import { FeaturedProducts, Hero, SubsribeSection } from "@/components";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
@@ -6,7 +9,9 @@ export default function Home() {
   return (
     <div className="">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <p>{t("test")}</p>
+        <Hero />
+        <FeaturedProducts />
+        <SubsribeSection />
       </main>
     </div>
   );

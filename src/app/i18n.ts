@@ -43,3 +43,4 @@ export default async function initTranslations(
     t: i18nInstance.t,
   };
 }
+

@@ -1,6 +1,6 @@
 import TranslationsProvider from "@/providers/translationsProvider";
 import initTranslations from "../i18n";
-import { MainPage } from "@/components";
+import { Footer, Header, MainPage } from "@/components";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,7 +23,9 @@ export default async function Layout({
       locale={locale}
       resources={resources}
     >
+      <Header />
       {children}
+      <Footer />
     </TranslationsProvider>
   );
 }
