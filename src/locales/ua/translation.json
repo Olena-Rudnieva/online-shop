@@ -4,9 +4,11 @@
     "catalog": "Каталог"
   },
   "home": {
+    "hero_title": "Dyson",
     "hero_text": "пропонує",
     "featured_products_title": "Рекомендовані продукти",
     "subscribe": "Підпишіться на нашу розсилку",
+    "currency": "UAH",  
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Приклад title",
@@ -21,6 +23,9 @@
       "title_four": "Приклад title",
       "price_four": "19.99"
     }
+  },
+  "catalog": {
+    "filters": "Фільтри"
   },
   "footer": {
     "copyrights": "© 2024, Dyson Store Powered by Shopify",

@@ -6,7 +6,6 @@ export const HeaderNavigation = ({ sx }: { sx?: string }) => {
 
   return (
     <div className={`flex gap-[24px] items-center ${sx}`}>
-      {/* here */}
       <Link
         href="/"
         className="text-customGray  text-[14px] leading-[18px] tracking-[0.6px]"

@@ -4,9 +4,11 @@
     "catalog": "Catalog"
   },
   "home": {
+    "hero_title": "Dyson",
     "hero_text": "offers",
     "featured_products_title": "Featured Products",
-    "subscribe": "Subscribe to our email",    
+    "subscribe": "Subscribe to our email",  
+    "currency": "UAH",  
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Example product title",
@@ -22,8 +24,11 @@
       "price_four": "19.99"
     }
   },
+  "catalog": {
+    "filters": "Filters"
+  },
   "footer": {
-    "": "© 2024, Dyson Store Powered by Shopify",
-    "catalog": "Catalog"
+    "copyrights": "© 2024, Dyson Store Powered by Shopify",
+    "policy": "Privacy policy"
   }
 }

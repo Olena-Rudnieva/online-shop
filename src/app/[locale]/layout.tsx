@@ -1,6 +1,6 @@
 import TranslationsProvider from "@/providers/translationsProvider";
 import initTranslations from "../i18n";
-import { Footer, Header, MainPage } from "@/components";
+import { Footer, Header } from "@/components";
 
 interface LayoutProps {
   children: React.ReactNode;

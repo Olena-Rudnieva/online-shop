@@ -3,26 +3,18 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useSubscribe } from "./hooks";
 
 export const SubsribeSection = () => {
-  const [email, setEmail] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
-
+  const {
+    email,
+    setEmail,
+    isFocused,
+    handleSubscribe,
+    handleFocus,
+    handleBlur,
+  } = useSubscribe();
   const { t } = useTranslation();
-
-  const handleSubscribe = () => {
-    if (email) {
-      alert(`Subscribed with ${email}`);
-      setEmail("");
-    }
-  };
-
-  const handleFocus = () => setIsFocused(true);
-  const handleBlur = () => {
-    if (!email) {
-      setIsFocused(false);
-    }
-  };
 
   return (
     <div className="relative w-full flex justify-center">
