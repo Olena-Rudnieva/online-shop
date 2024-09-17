@@ -6,7 +6,8 @@
   "home": {
     "hero_title": "Dyson",
     "hero_text": "пропонує",
-    "featured_products_title": "Рекомендовані продукти",
+    "featured_products_title": "Рекомендовані товари",
+    "products_title": "Товари",
     "subscribe": "Підпишіться на нашу розсилку",
     "currency": "UAH",  
     "items": {
@@ -26,7 +27,12 @@
   },
   "catalog": {
     "title": "Products",
-    "filters": "Фільтр:"
+    "filters": "Фільтр:",
+    "availability": "Наявність",
+    "selected": "Bибрано",
+    "reset": "Скинути",
+    "price": "Ціна",
+    "highest_price": "Найвища ціна ₴"
   },
   "product_details": {
     "store_name": "Dyson store",

@@ -7,6 +7,7 @@
     "hero_title": "Dyson",
     "hero_text": "offers",
     "featured_products_title": "Featured Products",
+    "products_title": "Products",
     "subscribe": "Subscribe to our email",  
     "currency": "UAH",  
     "items": {
@@ -26,7 +27,12 @@
   },
   "catalog": {
     "title": "Products",
-    "filter": "Filter:"
+    "filter": "Filter:",
+    "availability": "Availability",
+    "selected": "selected",
+    "reset": "Reset",
+    "price": "Price",
+    "highest_price": "The highest price is ₴"
   },
   "product_details": {
     "store_name": "Dyson store",

@@ -24,6 +24,20 @@ export interface Token {
   token: string;
 }
 
+export interface User {
+  userId: number;
+  name: string;
+  lastName: string;
+  role: string;
+  password: string;
+  email: string;
+  phone: string;
+  address: string; 
+  token: string | null;
+  refreshToken: string | null;
+  tokenExpiringIn: string;
+}
+
 export interface Product {
   id: number,
   title: string;
@@ -33,4 +47,13 @@ export interface Product {
   category?: string;
   compareAtPrice?: number
   quantity?: number
+}
+
+export interface Order {
+  orderId: number;
+  ownerId: number;
+  products: Product[];
+  payment?: boolean;
+  createdAt?: string;
+  
 }
