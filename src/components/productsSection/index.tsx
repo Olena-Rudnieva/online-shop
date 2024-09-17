@@ -1,0 +1,28 @@
+import { productsData } from "@/utils";
+import { ProductCard } from "../productCard";
+import { Filters } from "../filters";
+import { handleClientScriptLoad } from "next/script";
+
+export const ProductsSection = () => {
+  return (
+    <div className="relative w-full flex justify-center">
+      <div className="px-[30px] md:px-[32px] lg:px-[50px] pt-[20px] lg:pt-[25px] pb-[20px] lg:pb-[36px] flex flex-col justify-start items-start w-full max-w-[1200px]">
+        <div className="absolute left-0 top-0 w-screen">
+          <hr className="border-t border-gray-200" />
+        </div>
+        <h2 className="text-foreground text-[40px] leading-[52px] tracking-[0.6px] mb-[60px]">
+          Products
+        </h2>
+        <Filters />
+        <div className="flex lg:gap-[8px] gap-[8px]">
+          {productsData.map((card) => (
+            <ProductCard card={card} key={card.id} />
+          ))}
+        </div>
+        <div className="absolute left-0 bottom-0 w-screen">
+          <hr className="border-t border-gray-200" />
+        </div>
+      </div>
+    </div>
+  );
+};

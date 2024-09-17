@@ -25,7 +25,21 @@
     }
   },
   "catalog": {
-    "filters": "Filters"
+    "title": "Products",
+    "filter": "Filter:"
+  },
+  "product_details": {
+    "store_name": "Dyson store",
+    "title": "Test",
+    "price": "10,00",
+    "taxes": "Taxes included.",
+    "quantity_text": "Quantity",
+    "quantity": "2",
+    "in_cart": "in cart",
+    "button_add": "Add to cart",
+    "button_buy": "Buy it now",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iste laboriosam placeat hic ipsam reprehenderit tempore repellendus eum necessitatibus, enim beatae blanditiis quaerat ullam incidunt non! Quae dolorem quasi sint!",
+    "default_description": "No description"
   },
   "footer": {
     "copyrights": "© 2024, Dyson Store Powered by Shopify",

@@ -8,7 +8,7 @@ export const FeaturedProducts = () => {
   const { t } = useTranslation();
   return (
     <div className="relative w-full flex justify-center">
-      <div className="px-[30px] md:px-[32px] lg:px-[50px] pt-[20px] lg:pt-[44px] flex flex-col justify-start items-start w-full max-w-[1200px]">
+      <div className="px-[30px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[44px] flex flex-col justify-start items-start w-full max-w-[1200px]">
         <h2 className="text-foreground text-[20px] leading-[32px] tracking-[0.6px] mb-[30px]">
           {t("home.featured_products_title")}
         </h2>

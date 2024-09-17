@@ -25,7 +25,21 @@
     }
   },
   "catalog": {
-    "filters": "Фільтри"
+    "title": "Products",
+    "filters": "Фільтр:"
+  },
+  "product_details": {
+    "store_name": "Dyson store",
+    "title": "Test",
+    "price": "10,00",
+    "taxes": "Taxes included.",
+    "quantity_text": "Кількість",
+    "quantity": "2",
+    "in_cart": "в кошику",
+    "button_add": "Додати до кошику",
+    "button_buy": "Купити зараз",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iste laboriosam placeat hic ipsam reprehenderit tempore repellendus eum necessitatibus, enim beatae blanditiis quaerat ullam incidunt non! Quae dolorem quasi sint!",
+     "default_description": "Немає опису"
   },
   "footer": {
     "copyrights": "© 2024, Dyson Store Powered by Shopify",

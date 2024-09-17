@@ -13,7 +13,7 @@ export const HeaderNavigation = ({ sx }: { sx?: string }) => {
         {t("navigation.home")}
       </Link>
       <Link
-        href="/about"
+        href="/products"
         className="text-customGray text-[14px] leading-[18px] tracking-[0.6px]"
       >
         {t("navigation.catalog")}
