@@ -1,7 +1,13 @@
 "use client";
 
 import { useProductsQuery } from "@/api/queries";
-import { FeaturedProducts, Hero, SubsribeSection } from "@/components";
+import {
+  FeaturedProducts,
+  Hero,
+  ReviewSection,
+  SubsribeSection,
+} from "@/components";
+import { reviews } from "@/utils";
 
 export default function Home() {
   const { data: products, isLoading } = useProductsQuery();
@@ -10,6 +16,7 @@ export default function Home() {
     <main className="flex flex-col">
       <Hero />
       <FeaturedProducts products={products} />
+      <ReviewSection reviews={reviews} />
       <SubsribeSection />
     </main>
   );

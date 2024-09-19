@@ -43,7 +43,7 @@ export interface Product {
   title: string;
   description?: string
   price: string; //number
-  media: string; 
+  media: string[]; 
   category?: string;
   compareAtPrice?: number
   quantity?: number

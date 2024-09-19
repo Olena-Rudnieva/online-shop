@@ -9,7 +9,8 @@
     "featured_products_title": "Featured Products",
     "products_title": "Products",
     "subscribe": "Subscribe to our email",  
-    "currency": "UAH",  
+    "currency": "UAH",
+    "reviews": "Reviews",  
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Example product title",
@@ -28,6 +29,7 @@
   "catalog": {
     "title": "Products",
     "filter": "Filter:",
+    "filter_sort": "Filter and sort",
     "availability": "Availability",
     "selected": "selected",
     "reset": "Reset",

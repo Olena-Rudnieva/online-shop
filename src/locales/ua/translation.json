@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "home": "Домашня сторінка",
+    "home": "Головна сторінка",
     "catalog": "Каталог"
   },
   "home": {
@@ -10,6 +10,7 @@
     "products_title": "Товари",
     "subscribe": "Підпишіться на нашу розсилку",
     "currency": "UAH",  
+    "reviews": "Відгуки", 
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Приклад title",
@@ -28,6 +29,7 @@
   "catalog": {
     "title": "Products",
     "filters": "Фільтр:",
+    "filter_sort": "Фільтр та сортування",
     "availability": "Наявність",
     "selected": "Bибрано",
     "reset": "Скинути",

@@ -5,22 +5,16 @@ import { QUERY_KEYS } from '@/constant';
 export const useProductsQuery = () => {
     return useQuery({
       queryKey: [QUERY_KEYS.PRODUCTS],
-      queryFn: async () => {
-        const response = await apiHandlers.products.list();
-        return response.data;
-      }
+      queryFn:  () =>  apiHandlers.products.list().then((data) => data.data)
+   
+
     });
   };
 
-  export const useProductQuery = (id?: number) => {
+  export const useProductQuery = (id: number) => {
     return useQuery({
       queryKey: [QUERY_KEYS.PRODUCT, id],
-      queryFn: async () => {
-        if (id === undefined) {
-          throw new Error('Product ID is required');
-        }
-        const response = await apiHandlers.products.getProduct(id);
-        return response.data;
-      }
+      queryFn:  () => apiHandlers.products.getProduct(id).then((data) => data.data),
     });
   };
+

@@ -2,8 +2,9 @@
 
 import { Product } from "@/api";
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Carousel } from "../carousel";
+import { Counter } from "../counter";
 
 interface ProductDetailsProps {
   product: Product;
@@ -13,6 +14,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { t } = useTranslation();
 
   const [quantity, setQuantity] = useState<number>(1);
+  const [activeImage, setActiveImage] = useState(product.media[0]);
 
   const handleIncrement = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -23,16 +25,25 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
 
   return (
-    <div className="relative px-[30px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[36px] flex gap-[50px] w-full max-w-[1200px]">
-      <div className="absolute left-0 top-0 w-screen">
-        <hr className="border-t border-gray-200" />
-      </div>
-
-      <div>
+    <div className=" px-[30px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[36px] flex gap-[50px] w-full max-w-[1200px]">
+      <div className="flex flex-col items-center">
         <img
-          src={product.media[0]}
-          alt={product.title}
-          className="w-[715px] h-[715px] object-contain"
+          src={activeImage}
+          alt={`${product.title} large`}
+          className="w-[605px] h-[605px] object-contain"
+        />
+        <Carousel
+          items={product.media.map((image) => ({ id: image, media: image }))}
+          renderSlide={(item) => (
+            <img
+              src={item.media}
+              alt={`${product.title} thumbnail`}
+              onClick={() => setActiveImage(item.media)}
+              className={`w-[100px] h-[100px] object-contain cursor-pointer border ${
+                activeImage === item.media ? "border-black" : "border-gray-300"
+              }`}
+            />
+          )}
         />
       </div>
 
@@ -53,26 +64,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           {t("product_details.quantity_text")} ({quantity} {""}
           {t("product_details.in_cart")})
         </p>
-        <div className="flex border-gray-500 text-[18px] text-customDarkGray mt-[6px]  mb-[15px]">
-          <button
-            onClick={handleDecrement}
-            className="px-2 border-l border-t border-b border-gray-500 w-[45px] h-[47px]"
-          >
-            -
-          </button>
-          <input
-            type="text"
-            value={quantity}
-            readOnly
-            className="w-[50px] h-[47px] text-center bg-transparent border-t border-b border-gray-500"
-          />
-          <button
-            onClick={handleIncrement}
-            className="px-2 border-t border-b border-r border-gray-500 w-[45px] h-[47px]"
-          >
-            +
-          </button>
-        </div>
+        <Counter
+          quantity={quantity}
+          handleDecrement={handleDecrement}
+          handleIncrement={handleIncrement}
+        />
         <div className="mb-[20px]">
           <button className="py-[12px] border border-gray-500 w-full text-[15px] leading-[18px] mb-[8px] hover:border-black transition-transform hover:scale-[101%]">
             {t("product_details.button_add")}
@@ -81,12 +77,15 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             {t("product_details.button_buy")}
           </button>
         </div>
-        <p className="text-[16px] text-customGray leading-[28px] tracking-[0.6px]">
-          {product.description || "product_details.default_description"}
-        </p>
-      </div>
-      <div className="absolute left-0 bottom-0 w-screen">
-        <hr className="border-t border-gray-200" />
+        <div className="overflow-y-auto max-h-[400px]">
+          <p
+            className="text-[16px] text-customGray leading-[28px] tracking-[0.6px]"
+            dangerouslySetInnerHTML={{
+              __html:
+                product.description || "product_details.default_description",
+            }}
+          />
+        </div>
       </div>
     </div>
   );

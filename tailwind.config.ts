@@ -14,6 +14,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         customGray: "rgba(18, 18, 18, 0.75)",
         customDarkGray: "rgb(18, 18, 18)",
+        customLightGray: "rgba(18, 18, 18, 0.04",
         customWhite: "rgba(255, 255, 255, 0.7)",
         overlay: "rgba(30, 30, 30, 0.4)",
       },

@@ -17,11 +17,14 @@ export const ProductCard = ({ card }: ProductCardProps) => {
   };
 
   return (
-    <div onClick={() => handleProductClick(card.id)} className="cursor-pointer">
+    <div
+      onClick={() => handleProductClick(card.id)}
+      className="cursor-pointer w-[230px]"
+    >
       <img
         src={t(card.media[0])}
         alt={t(card.title)}
-        className="w-[269px] h-[269px] mb-[20px] object-contain"
+        className="w-[230px] h-[230px] mb-[20px] object-contain"
       />
       <h3 className="text-[13px] text-customGray leading-[17px] tracking-[0.6px] text-center">
         {t(card.title)}

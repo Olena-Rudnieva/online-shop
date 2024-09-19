@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSubscribe } from "./hooks";
 
@@ -18,11 +17,11 @@ export const SubsribeSection = () => {
 
   return (
     <div className="relative w-full flex justify-center">
-      <div className="px-[30px] md:px-[32px] lg:px-[50px] pt-[20px] lg:pt-[36px] pb-[30px] lg:pb-[50px] flex flex-col justify-centerc items-center  w-full max-w-[1200px]">
-        <h2 className="text-foreground text-[18px] leading-[23px] tracking-[0.6px] mb-[20px] text-center">
+      <div className="px-[15px] md:px-[32px] lg:px-[50px] pt-[20px] lg:pt-[36px] pb-[30px] lg:pb-[50px] flex flex-col justify-centerc items-center  w-full max-w-[1200px]">
+        <h2 className="text-foreground text-[16px] md:text-[18px] leading-[23px] tracking-[0.6px] mb-[20px] text-center">
           {t("home.subscribe")}
         </h2>
-        <div className="relative flex items-center w-full max-w-[400px]">
+        <div className="relative flex items-center w-[220px] md:w-[300px] lg:w-[400px]">
           <input
             type="email"
             value={email}

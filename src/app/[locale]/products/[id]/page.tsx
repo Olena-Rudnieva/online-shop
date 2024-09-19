@@ -1,9 +1,14 @@
 "use client";
 
-import { ProductDetails, SubsribeSection } from "@/components";
+import {
+  FeaturedProducts,
+  ProductDetails,
+  SubsribeSection,
+} from "@/components";
 import { useTranslation } from "react-i18next";
 import { useParams } from "next/navigation";
 import { useProductQuery } from "@/api/queries";
+import { productsData } from "@/utils";
 
 export default function SelectedProduct() {
   const { t } = useTranslation();
@@ -16,9 +21,16 @@ export default function SelectedProduct() {
   }
 
   return (
-    <div className=" w-full flex flex-col justify-center items-center">
+    <div className="relative w-full flex flex-col justify-center items-center">
+      <div className="absolute left-0 top-0 w-screen">
+        <hr className="border-t border-gray-200" />
+      </div>
       <ProductDetails product={product} />
+      <FeaturedProducts products={productsData} />
       <SubsribeSection />
+      <div className="absolute left-0 bottom-[180px] w-screen">
+        <hr className="border-t border-gray-200" />
+      </div>
     </div>
   );
 }

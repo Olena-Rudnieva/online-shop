@@ -1,6 +1,5 @@
 "use client";
 
-import { productsData } from "@/utils";
 import { ProductCard } from "../productCard";
 import { Filters } from "../filters";
 import { Product } from "@/api";
@@ -18,8 +17,8 @@ export const ProductsSection = ({ products }: ProductsSectionProps) => {
   }
 
   return (
-    <div className="relative w-full flex justify-center">
-      <div className="px-[30px] md:px-[32px] lg:px-[50px] pt-[20px] lg:pt-[25px] pb-[20px] lg:pb-[36px] flex flex-col justify-start items-start w-full max-w-[1200px]">
+    <div className="relative w-full flex justify-center ">
+      <div className="px-[15px] md:px-[32px] lg:px-[50px] pt-[20px] lg:pt-[25px] pb-[20px] lg:pb-[36px] w-full max-w-[1200px]">
         <div className="absolute left-0 top-0 w-screen">
           <hr className="border-t border-gray-200" />
         </div>
@@ -27,7 +26,7 @@ export const ProductsSection = ({ products }: ProductsSectionProps) => {
           {t("home.products_title")}
         </h2>
         <Filters />
-        <div className="flex lg:gap-[8px] gap-[8px]">
+        <div className="flex flex-col justify-center items-center md:flex-row lg:gap-[8px] gap-[8px]">
           {products &&
             products.length > 0 &&
             products.map((card) => <ProductCard card={card} key={card.id} />)}
