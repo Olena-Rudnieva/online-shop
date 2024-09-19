@@ -1,16 +1,22 @@
 "use client";
 
-import { FeaturedProducts, Hero, SubsribeSection } from "@/components";
-import { useTranslation } from "react-i18next";
+import { useProductsQuery } from "@/api/queries";
+import {
+  FeaturedProducts,
+  Hero,
+  ReviewSection,
+  SubsribeSection,
+} from "@/components";
+import { reviews } from "@/utils";
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { data: products, isLoading } = useProductsQuery();
 
   return (
     <main className="flex flex-col">
       <Hero />
-      <FeaturedProducts />
-      <SubsribeSection />
+      <FeaturedProducts products={products} />
+      <ReviewSection reviews={reviews} />
     </main>
   );
 }

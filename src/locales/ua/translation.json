@@ -1,14 +1,17 @@
 {
   "navigation": {
-    "home": "Домашня сторінка",
+    "home": "Головна сторінка",
     "catalog": "Каталог"
   },
   "home": {
     "hero_title": "Dyson",
     "hero_text": "пропонує",
-    "featured_products_title": "Рекомендовані продукти",
+    "featured_products_title": "Рекомендовані товари",
+    "products_title": "Товари",
     "subscribe": "Підпишіться на нашу розсилку",
     "currency": "UAH",  
+    "reviews": "Відгуки", 
+    "no_products": "Немає товарів", 
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Приклад title",
@@ -25,7 +28,27 @@
     }
   },
   "catalog": {
-    "filters": "Фільтри"
+    "title": "Products",
+    "filters": "Фільтр:",
+    "filter_sort": "Фільтр та сортування",
+    "availability": "Наявність",
+    "selected": "Bибрано",
+    "reset": "Скинути",
+    "price": "Ціна",
+    "highest_price": "Найвища ціна ₴"
+  },
+  "product_details": {
+    "store_name": "Dyson store",
+    "title": "Test",
+    "price": "10,00",
+    "taxes": "Taxes included.",
+    "quantity_text": "Кількість",
+    "quantity": "2",
+    "in_cart": "в кошику",
+    "button_add": "Додати до кошику",
+    "button_buy": "Купити зараз",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iste laboriosam placeat hic ipsam reprehenderit tempore repellendus eum necessitatibus, enim beatae blanditiis quaerat ullam incidunt non! Quae dolorem quasi sint!",
+     "default_description": "Немає опису"
   },
   "footer": {
     "copyrights": "© 2024, Dyson Store Powered by Shopify",

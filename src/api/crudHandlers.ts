@@ -48,3 +48,4 @@ export function deleteData<SuccessPayload>(
         ...config,
     });
 }
+

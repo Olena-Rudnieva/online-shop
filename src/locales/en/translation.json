@@ -7,8 +7,11 @@
     "hero_title": "Dyson",
     "hero_text": "offers",
     "featured_products_title": "Featured Products",
+    "products_title": "Products",
     "subscribe": "Subscribe to our email",  
-    "currency": "UAH",  
+    "currency": "UAH",
+    "reviews": "Reviews", 
+    "no_products": "No products available", 
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Example product title",
@@ -25,7 +28,27 @@
     }
   },
   "catalog": {
-    "filters": "Filters"
+    "title": "Products",
+    "filter": "Filter:",
+    "filter_sort": "Filter and sort",
+    "availability": "Availability",
+    "selected": "selected",
+    "reset": "Reset",
+    "price": "Price",
+    "highest_price": "The highest price is ₴"
+  },
+  "product_details": {
+    "store_name": "Dyson store",
+    "title": "Test",
+    "price": "10,00",
+    "taxes": "Taxes included.",
+    "quantity_text": "Quantity",
+    "quantity": "2",
+    "in_cart": "in cart",
+    "button_add": "Add to cart",
+    "button_buy": "Buy it now",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iste laboriosam placeat hic ipsam reprehenderit tempore repellendus eum necessitatibus, enim beatae blanditiis quaerat ullam incidunt non! Quae dolorem quasi sint!",
+    "default_description": "No description"
   },
   "footer": {
     "copyrights": "© 2024, Dyson Store Powered by Shopify",

@@ -15,6 +15,7 @@ export const httpClient = createHttpClient();
 export async function makeHttpRequest<SuccessPayload>(
   config: AxiosRequestConfig
 ): Promise<AxiosResponseSuccess<SuccessPayload>> {
+
   const headersToSend: any = {};
   const tokenFromLocalStorage = localStorage.getItem(LOCAL_STORAGE_KEYS.TOKEN);
 

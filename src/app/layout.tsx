@@ -4,13 +4,6 @@ import "./globals.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import i18nConfig from "@/app/i18nConfig";
 import { queryClient } from "@/api";
-import {
-  FeaturedProducts,
-  Footer,
-  Header,
-  Hero,
-  SubsribeSection,
-} from "@/components";
 
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
