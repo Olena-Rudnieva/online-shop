@@ -2,9 +2,9 @@
 
 import { Product } from "@/api";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 import { Carousel } from "../carousel";
 import { Counter } from "../counter";
+import { useCount } from "./hooks";
 
 interface ProductDetailsProps {
   product: Product;
@@ -13,19 +13,16 @@ interface ProductDetailsProps {
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { t } = useTranslation();
 
-  const [quantity, setQuantity] = useState<number>(1);
-  const [activeImage, setActiveImage] = useState(product.media[0]);
-
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
-  const handleDecrement = () => {
-    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-  };
+  const {
+    quantity,
+    activeImage,
+    handleIncrement,
+    handleDecrement,
+    handleImageClick,
+  } = useCount(product.media);
 
   return (
-    <div className=" px-[30px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[36px] flex gap-[50px] w-full max-w-[1200px]">
+    <div className="px-[30px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[36px] flex gap-[50px] w-full max-w-[1200px]">
       <div className="flex flex-col items-center">
         <img
           src={activeImage}
@@ -38,7 +35,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             <img
               src={item.media}
               alt={`${product.title} thumbnail`}
-              onClick={() => setActiveImage(item.media)}
+              onClick={() => handleImageClick(item.media)}
               className={`w-[100px] h-[100px] object-contain cursor-pointer border ${
                 activeImage === item.media ? "border-black" : "border-gray-300"
               }`}
@@ -48,10 +45,10 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
       </div>
 
       <div className="flex flex-col w-[345px]">
-        <p className=" text-customGray text-[10px] leading-[12px] tracking-[1.3px] uppercase">
+        <p className="text-customGray text-[10px] leading-[12px] tracking-[1.3px] uppercase">
           {t("product_details.store_name")}
         </p>
-        <h2 className=" text-foreground text-[40px] leading-[52px] tracking-[0.6px] mb-[15px]">
+        <h2 className="text-foreground text-[40px] leading-[52px] tracking-[0.6px] mb-[15px]">
           {product.title}
         </h2>
         <p className="text-[16px] text-customGray leading-[24px] tracking-[0.6px] ">
@@ -73,7 +70,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           <button className="py-[12px] border border-gray-500 w-full text-[15px] leading-[18px] mb-[8px] hover:border-black transition-transform hover:scale-[101%]">
             {t("product_details.button_add")}
           </button>
-          <button className=" py-[12px] border border-gray-500  bg-customDarkGray w-full text-[15px] text-white leading-[18px] transition-transform transform hover:scale-[101%]">
+          <button className="py-[12px] border border-gray-500  bg-customDarkGray w-full text-[15px] text-white leading-[18px] transition-transform transform hover:scale-[101%]">
             {t("product_details.button_buy")}
           </button>
         </div>

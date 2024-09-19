@@ -6,14 +6,14 @@ import { Product } from "@/api";
 import { useTranslation } from "react-i18next";
 
 interface ProductsSectionProps {
-  products: Product[] | undefined;
+  products?: Product[];
 }
 
 export const ProductsSection = ({ products }: ProductsSectionProps) => {
   const { t } = useTranslation();
 
   if (!products) {
-    return <div>No products available</div>;
+    return <div> {t("home.no_products")}</div>;
   }
 
   return (
@@ -27,9 +27,9 @@ export const ProductsSection = ({ products }: ProductsSectionProps) => {
         </h2>
         <Filters />
         <div className="flex flex-col justify-center items-center md:flex-row lg:gap-[8px] gap-[8px]">
-          {products &&
-            products.length > 0 &&
-            products.map((card) => <ProductCard card={card} key={card.id} />)}
+          {products.map((card) => (
+            <ProductCard card={card} key={card.id} />
+          ))}
         </div>
         <div className="absolute left-0 bottom-0 w-screen">
           <hr className="border-t border-gray-200" />

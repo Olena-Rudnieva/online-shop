@@ -10,7 +10,8 @@
     "products_title": "Products",
     "subscribe": "Subscribe to our email",  
     "currency": "UAH",
-    "reviews": "Reviews",  
+    "reviews": "Reviews", 
+    "no_products": "No products available", 
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Example product title",

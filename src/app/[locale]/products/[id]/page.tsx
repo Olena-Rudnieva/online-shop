@@ -27,10 +27,6 @@ export default function SelectedProduct() {
       </div>
       <ProductDetails product={product} />
       <FeaturedProducts products={productsData} />
-      <SubsribeSection />
-      <div className="absolute left-0 bottom-[180px] w-screen">
-        <hr className="border-t border-gray-200" />
-      </div>
     </div>
   );
 }

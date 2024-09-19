@@ -8,7 +8,6 @@ export default function Products() {
   return (
     <main className="flex flex-col">
       <ProductsSection products={products} />
-      <SubsribeSection />
     </main>
   );
 }

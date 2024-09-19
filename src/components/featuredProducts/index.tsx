@@ -13,7 +13,7 @@ export const FeaturedProducts = ({ products }: FeaturedProductsProps) => {
   const { t } = useTranslation();
 
   if (!products) {
-    return <div>No products available</div>;
+    return <div> {t("home.no_products")}</div>;
   }
 
   return (
@@ -23,18 +23,14 @@ export const FeaturedProducts = ({ products }: FeaturedProductsProps) => {
           {t("home.featured_products_title")}
         </h2>
         <div className="flex justify-center items-center md:hidden gap-[8px]">
-          {products && products.length > 0 && (
-            <ProductCard card={products[0]} key={products[0].id} />
-          )}
+          <ProductCard card={products[0]} key={products[0].id} />
         </div>
         <div className="hidden md:flex justify-center items-center gap-[8px]">
-          {products && products.length > 0 && (
-            <Carousel
-              items={products}
-              renderSlide={(product) => <ProductCard card={product} />}
-              className="w-full"
-            />
-          )}
+          <Carousel
+            items={products}
+            renderSlide={(product) => <ProductCard card={product} />}
+            className="w-full"
+          />
         </div>
         <div className="absolute left-0 bottom-0 w-screen">
           <hr className="border-t border-gray-200" />

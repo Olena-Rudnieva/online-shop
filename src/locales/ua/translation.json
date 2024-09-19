@@ -11,6 +11,7 @@
     "subscribe": "Підпишіться на нашу розсилку",
     "currency": "UAH",  
     "reviews": "Відгуки", 
+    "no_products": "Немає товарів", 
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Приклад title",

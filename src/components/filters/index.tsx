@@ -1,6 +1,5 @@
 "use client";
 
-import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import {
@@ -11,55 +10,23 @@ import {
 } from "@headlessui/react";
 import FilterIcon from "../../../public/icons/filter.svg";
 import { Drawer } from "../header/components";
-
-type AvailabilityOption = {
-  name: string;
-  count: number;
-};
+import { useFilter } from "./hooks";
 
 export const Filters = () => {
-  const [selectedAvailability, setSelectedAvailability] = useState<string[]>(
-    []
-  );
-  const availabilityOptions: AvailabilityOption[] = [
-    { name: "In stock", count: 1 },
-    { name: "Out of stock", count: 0 },
-  ];
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 10]);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const drawerOpenFn = useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
-
-  const drawerCloseFn = useCallback(() => {
-    setIsOpen(false);
-  }, []);
+  const {
+    selectedAvailability,
+    availabilityOptions,
+    priceRange,
+    isOpen,
+    drawerOpenFn,
+    drawerCloseFn,
+    handleSelect,
+    resetSelection,
+    handlePriceChange,
+    setPriceRange,
+  } = useFilter();
 
   const { t } = useTranslation();
-
-  const handleSelect = (option: string) => {
-    if (selectedAvailability.includes(option)) {
-      setSelectedAvailability(
-        selectedAvailability.filter((item) => item !== option)
-      );
-    } else {
-      setSelectedAvailability([...selectedAvailability, option]);
-    }
-  };
-
-  const resetSelection = () => {
-    setSelectedAvailability([]);
-  };
-
-  const handlePriceChange = (index: number, value: string) => {
-    const newPrice = [...priceRange];
-    newPrice[index] = Number(value);
-    setPriceRange([
-      Math.max(0, newPrice[0]),
-      Math.max(newPrice[0], newPrice[1]),
-    ]);
-  };
 
   return (
     <div className="w-full flex gap-[20px] justify-start">
