@@ -21,6 +21,13 @@ export const apiPaths = {
         updateProduct: (id: number) => `/products/${id}`,
         deleteProduct: (id: number) => `/products/${id}`,
       },
+      cart: {
+        getCart: () => "/cart",
+        getOneCartItem: (id: number) => `/cart/${id}`,
+        addToCart: () => "/cart",
+        updateCartItem: (id: number) => `/cart/${id}`,
+        deleteCartItem: (id: number) => `/cart/${id}`,
+      },
     orders: {
       getOrders: (userId?: number) =>
         userId ? `/orders?ownerId=${userId}` : `/orders`,

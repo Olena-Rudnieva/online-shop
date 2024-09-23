@@ -4,6 +4,7 @@ import "./globals.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import i18nConfig from "@/app/i18nConfig";
 import { queryClient } from "@/api";
+import { CartProvider } from "@/providers";
 
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale) => ({ locale }));
@@ -29,7 +30,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <QueryClientProvider client={queryClient}>
-          {children}
+          <CartProvider>{children}</CartProvider>
         </QueryClientProvider>
       </body>
     </html>

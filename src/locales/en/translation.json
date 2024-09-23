@@ -48,10 +48,29 @@
     "button_add": "Add to cart",
     "button_buy": "Buy it now",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iste laboriosam placeat hic ipsam reprehenderit tempore repellendus eum necessitatibus, enim beatae blanditiis quaerat ullam incidunt non! Quae dolorem quasi sint!",
-    "default_description": "No description"
+    "default_description": "No description",
+    "not_found": "Product not found"
   },
   "footer": {
     "copyrights": "© 2024, Dyson Store Powered by Shopify",
     "policy": "Privacy policy"
+  },
+  "modal": {
+    "cart_modal_title": "Product added to your cart",
+    "quantity": "Quantity:",
+    "view_cart": "View Cart",
+    "check_out": "Check out"
+  },
+  "cart": {
+    "cart_title": "Your Cart",
+    "cart_empty": "Your cart is empty",
+    "continue_shopping": "Continue Shopping",
+    "product": "Product",
+    "quantity": "Quantity",
+    "total": "Total",
+    "estimated_total": "Estimated total:",
+    "taxes_included": "Taxes included.",
+    "discounts_shipping": "Discounts and shipping calculated at checkout.",
+    "check_out": "Check out"
   }
 }

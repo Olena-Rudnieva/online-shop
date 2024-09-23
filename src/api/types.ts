@@ -42,7 +42,7 @@ export interface Product {
   id: number,
   title: string;
   description?: string
-  price: string; //number
+  price: number
   media: string[]; 
   category?: string;
   compareAtPrice?: number
