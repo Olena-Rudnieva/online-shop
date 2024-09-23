@@ -23,9 +23,11 @@ export default async function Layout({
       locale={locale}
       resources={resources}
     >
-      <Header />
-      {children}
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </div>
     </TranslationsProvider>
   );
 }

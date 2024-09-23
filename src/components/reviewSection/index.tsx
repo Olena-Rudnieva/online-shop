@@ -22,6 +22,9 @@ export const ReviewSection = ({ reviews }: ReviewSectionProps) => {
 
   return (
     <div className="relative w-full flex justify-center">
+      <div className="absolute left-0 top-0 w-screen">
+        <hr className="border-t border-gray-200" />
+      </div>
       <div className="px-[15px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[44px] flex flex-col justify-start items-start w-full max-w-[1200px]">
         <h2 className="text-foreground text-[20px] leading-[32px] tracking-[0.6px] mb-[30px]">
           {t("home.reviews")}
@@ -41,9 +44,6 @@ export const ReviewSection = ({ reviews }: ReviewSectionProps) => {
               <p className="text-[14px] text-customGray">{review.comment}</p>
             </div>
           ))}
-        </div>
-        <div className="absolute left-0 bottom-0 w-screen">
-          <hr className="border-t border-gray-200" />
         </div>
       </div>
     </div>

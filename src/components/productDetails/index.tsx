@@ -4,7 +4,11 @@ import { Product } from "@/api";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "../carousel";
 import { Counter } from "../counter";
-import { useCount } from "./hooks";
+import { useCount, useModal } from "../../hooks";
+import { useCart } from "@/context";
+import { Modal } from "../modal";
+import { AddToCartModal } from "../modal/components";
+import { Button } from "../button";
 
 interface ProductDetailsProps {
   product: Product;
@@ -12,6 +16,7 @@ interface ProductDetailsProps {
 
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { t } = useTranslation();
+  const { addToCart } = useCart();
 
   const {
     quantity,
@@ -21,13 +26,20 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
     handleImageClick,
   } = useCount(product.media);
 
+  const { isOpen, openModal, closeModal } = useModal();
+
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+    openModal();
+  };
+
   return (
-    <div className="px-[30px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[36px] flex gap-[50px] w-full max-w-[1200px]">
+    <div className="px-[15px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[36px] flex flex-col md:flex-row gap-[50px] w-full max-w-[1200px]">
       <div className="flex flex-col items-center">
         <img
           src={activeImage}
           alt={`${product.title} large`}
-          className="w-[605px] h-[605px] object-contain"
+          className="w-[315px] md:w-[605px] h-[315px] md:h-[605px] object-contain"
         />
         <Carousel
           items={product.media.map((image) => ({ id: image, media: image }))}
@@ -36,7 +48,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
               src={item.media}
               alt={`${product.title} thumbnail`}
               onClick={() => handleImageClick(item.media)}
-              className={`w-[100px] h-[100px] object-contain cursor-pointer border ${
+              className={`w-[60px] md:w-[100px] h-[60px] md:h-[100px] object-contain cursor-pointer border ${
                 activeImage === item.media ? "border-black" : "border-gray-300"
               }`}
             />
@@ -48,11 +60,12 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
         <p className="text-customGray text-[10px] leading-[12px] tracking-[1.3px] uppercase">
           {t("product_details.store_name")}
         </p>
-        <h2 className="text-foreground text-[40px] leading-[52px] tracking-[0.6px] mb-[15px]">
+        <h2 className="text-foreground text-[30px] md:text-[40px] leading-[52px] tracking-[0.6px] mb-[15px]">
           {product.title}
         </h2>
         <p className="text-[16px] text-customGray leading-[24px] tracking-[0.6px] ">
-          ₴{product.price} {t("home.currency")}
+          {t("cart.currency_sign")}
+          {product.price} {t("home.currency")}
         </p>
         <p className="text-[12px] text-customGray leading-[20px] tracking-[0.7px] mb-[15px]">
           {t("product_details.taxes")}
@@ -66,13 +79,19 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           handleDecrement={handleDecrement}
           handleIncrement={handleIncrement}
         />
-        <div className="mb-[20px]">
-          <button className="py-[12px] border border-gray-500 w-full text-[15px] leading-[18px] mb-[8px] hover:border-black transition-transform hover:scale-[101%]">
+        <div className="flex flex-col gap-[10px] mb-[20px]">
+          <Button
+            onClick={handleAddToCart}
+            className="w-full hover:border-black"
+          >
             {t("product_details.button_add")}
-          </button>
-          <button className="py-[12px] border border-gray-500  bg-customDarkGray w-full text-[15px] text-white leading-[18px] transition-transform transform hover:scale-[101%]">
+          </Button>
+          <Button
+            className="bg-customDarkGray text-white w-full hover:bg-customDarkGrayDark"
+            onClick={() => {}}
+          >
             {t("product_details.button_buy")}
-          </button>
+          </Button>
         </div>
         <div className="overflow-y-auto max-h-[400px]">
           <p
@@ -84,6 +103,9 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           />
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <AddToCartModal product={product} quantity={quantity} />
+      </Modal>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
+
 interface CounterProps {
   quantity: number;
   handleDecrement: () => void;
@@ -11,13 +13,14 @@ export const Counter = ({
   handleDecrement,
   handleIncrement,
 }: CounterProps) => {
+  const { t } = useTranslation();
   return (
     <div className="flex border-gray-500 text-[18px] text-customDarkGray mt-[6px]  mb-[15px]">
       <button
         onClick={handleDecrement}
         className="px-2 border-l border-t border-b border-gray-500 w-[45px] h-[47px]"
       >
-        -
+        {t("counter.-")}
       </button>
       <input
         type="text"
@@ -29,7 +32,7 @@ export const Counter = ({
         onClick={handleIncrement}
         className="px-2 border-t border-b border-r border-gray-500 w-[45px] h-[47px]"
       >
-        +
+        {t("counter.+")}
       </button>
     </div>
   );

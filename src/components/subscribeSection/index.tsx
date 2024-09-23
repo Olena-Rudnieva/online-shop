@@ -54,9 +54,6 @@ export const SubsribeSection = () => {
             />
           </button>
         </div>
-        <div className="absolute left-0 bottom-0 w-screen">
-          <hr className="border-t border-gray-200" />
-        </div>
       </div>
     </div>
   );

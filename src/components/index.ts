@@ -9,3 +9,7 @@ export * from './productDetails'
 export * from './carousel'
 export * from './counter'
 export * from './reviewSection'
+export * from './modal'
+export * from './button'
+export * from './cartData'
+

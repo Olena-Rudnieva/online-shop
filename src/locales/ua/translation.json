@@ -48,10 +48,31 @@
     "button_add": "Додати до кошику",
     "button_buy": "Купити зараз",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iste laboriosam placeat hic ipsam reprehenderit tempore repellendus eum necessitatibus, enim beatae blanditiis quaerat ullam incidunt non! Quae dolorem quasi sint!",
-     "default_description": "Немає опису"
+    "default_description": "Немає опису",
+     "not_found": "Продукт не знайдено"
   },
   "footer": {
     "copyrights": "© 2024, Dyson Store Powered by Shopify",
     "policy": "Privacy policy"
+  },
+  "modal": {
+    "cart_modal_title": "Товар додано до вашого кошика",
+    "quantity": "Кількість:",
+    "view_cart": "Перейти до кошика",
+    "check_out": "Оформити замовлення"
+  },
+  "cart": {
+    "cart_title": "Ваш кошик",
+    "cart_empty": "Ваш кошик порожній",
+    "continue_shopping": "Продовжити покупки",
+    "product": "Товар",
+    "quantity": "Кількість",
+    "total": "Всього",
+    "estimated_total": "Cума:",
+    "taxes_included": "Податки включено.",
+    "discounts_shipping": "Знижки та доставка будуть розраховані під час оформлення замовлення.",
+    "check_out": "Оформити замовлення",
+    "currency_sign": "₴",
+    "currency": "UAH"
   }
 }
