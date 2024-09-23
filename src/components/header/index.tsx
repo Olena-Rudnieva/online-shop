@@ -38,7 +38,7 @@ export const Header = () => {
           <Link href="/cart">
             <img src={cartIconSrc} alt="Cart Icon" width={44} height={44} />
           </Link>
-          {cart.length && (
+          {cart.length > 0 && (
             <span className="absolute bottom-[8px] right-[6px] bg-customDarkGray text-white text-[8px] rounded-full w-[16px] h-[16px] flex items-center justify-center">
               {cart.length}
             </span>
