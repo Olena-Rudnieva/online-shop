@@ -74,5 +74,12 @@
     "check_out": "Оформити замовлення",
     "currency_sign": "₴",
     "currency": "UAH"
+  },
+  "counter": {
+    "+": "+",
+    "-": "-"
+  },
+  "payments": {
+    "title": "Оформити замовлення"
   }
 }

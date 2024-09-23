@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext } from "react";
 import { Product } from "@/api";
 
 export interface CartItem {

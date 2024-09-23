@@ -1,12 +1,7 @@
 "use client";
 
 import { useProductsQuery } from "@/api/queries";
-import {
-  FeaturedProducts,
-  Hero,
-  ReviewSection,
-  SubsribeSection,
-} from "@/components";
+import { FeaturedProducts, Hero, ReviewSection } from "@/components";
 import { reviews } from "@/utils";
 
 export default function Home() {
