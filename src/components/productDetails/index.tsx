@@ -4,9 +4,8 @@ import { Product } from "@/api";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "../carousel";
 import { Counter } from "../counter";
-import { useCount } from "../../hooks";
+import { useCount, useModal } from "../../hooks";
 import { useCart } from "@/context";
-import { useState } from "react";
 import { Modal } from "../modal";
 import { AddToCartModal } from "../modal/components";
 import { Button } from "../button";
@@ -27,15 +26,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
     handleImageClick,
   } = useCount(product.media);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isOpen, openModal, closeModal } = useModal();
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+    openModal();
   };
 
   return (
@@ -69,7 +64,8 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           {product.title}
         </h2>
         <p className="text-[16px] text-customGray leading-[24px] tracking-[0.6px] ">
-          ₴{product.price} {t("home.currency")}
+          {t("cart.currency_sign")}
+          {product.price} {t("home.currency")}
         </p>
         <p className="text-[12px] text-customGray leading-[20px] tracking-[0.7px] mb-[15px]">
           {t("product_details.taxes")}
@@ -107,7 +103,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           />
         </div>
       </div>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+      <Modal isOpen={isOpen} onClose={closeModal}>
         <AddToCartModal product={product} quantity={quantity} />
       </Modal>
     </div>

@@ -71,6 +71,8 @@
     "estimated_total": "Cума:",
     "taxes_included": "Податки включено.",
     "discounts_shipping": "Знижки та доставка будуть розраховані під час оформлення замовлення.",
-    "check_out": "Оформити замовлення"
+    "check_out": "Оформити замовлення",
+    "currency_sign": "₴",
+    "currency": "UAH"
   }
 }

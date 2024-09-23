@@ -1,12 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Drawer, HeaderNavigation } from "./components";
 import MobileMenu from "../../../public/icons/menu.svg";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useCart } from "@/context";
-import { IoBagOutline, IoBagHandleOutline } from "react-icons/io5";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,14 +18,9 @@ export const Header = () => {
     setIsOpen(false);
   }, []);
 
-  const isCartEmpty = cart.length === 0;
-  const cartItemCount = cart.length;
-
-  const cartIconSrc = isCartEmpty
+  const cartIconSrc = !cart.length
     ? "/icons/cart.svg"
     : "/icons/cartWithProduct.svg";
-
-  // const cartIconSrc = isCartEmpty ? <IoBagOutline /> : <IoBagHandleOutline />;
 
   return (
     <header className="relative w-full flex justify-center">
@@ -45,11 +38,9 @@ export const Header = () => {
           <Link href="/cart">
             <img src={cartIconSrc} alt="Cart Icon" width={44} height={44} />
           </Link>
-          {/* <Image src={cartIconSrc} alt="Cart Icon" width={44} height={44} /> */}
-          {/* {cartIconSrc} */}
-          {cartItemCount > 0 && (
+          {cart.length && (
             <span className="absolute bottom-[8px] right-[6px] bg-customDarkGray text-white text-[8px] rounded-full w-[16px] h-[16px] flex items-center justify-center">
-              {cartItemCount}
+              {cart.length}
             </span>
           )}
         </div>

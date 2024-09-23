@@ -2,6 +2,7 @@ import { Product } from "@/api";
 import DeleteIcon from "../../../../../public/icons/delete.svg";
 import { Counter } from "@/components/counter";
 import { useCount } from "@/hooks";
+import { useTranslation } from "react-i18next";
 
 interface CartItemProps {
   item: {
@@ -12,6 +13,7 @@ interface CartItemProps {
 }
 
 export const CartItem = ({ item, removeFromCart }: CartItemProps) => {
+  const { t } = useTranslation();
   const { handleDecreaseQuantity, handleIncreaseQuantity } = useCount();
 
   return (
@@ -26,7 +28,8 @@ export const CartItem = ({ item, removeFromCart }: CartItemProps) => {
           <div>
             <h4>{item.product.title}</h4>
             <p className="text-gray-500">
-              ₴{Number(item.product.price).toFixed(2)}
+              {t("cart.currency_sign")}
+              {Number(item.product.price).toFixed(2)}
             </p>
           </div>
         </div>
@@ -47,7 +50,8 @@ export const CartItem = ({ item, removeFromCart }: CartItemProps) => {
         </div>
       </td>
       <td className="py-4 text-right">
-        ₴{(Number(item.product.price) * item.quantityInCart).toFixed(2)}
+        {t("cart.currency_sign")}
+        {(Number(item.product.price) * item.quantityInCart).toFixed(2)}
       </td>
     </tr>
   );

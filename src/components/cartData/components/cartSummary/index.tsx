@@ -21,7 +21,8 @@ export const CartSummary = ({ cart }: CartSummaryProps) => {
       <div className="flex gap-[20px]">
         <h2 className="text-lg font-bold mb-4">{t("cart.estimated_total")}</h2>
         <p className="text-right text-xl font-semibold">
-          ₴{totalAmount.toFixed(2)} UAH
+          {t("cart.currency_sign")}
+          {totalAmount.toFixed(2)} {t("cart.currency")}
         </p>
       </div>
       <p className="text-gray-500 text-sm mt-1">{t("cart.taxes_included")}</p>

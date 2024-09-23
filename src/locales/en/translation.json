@@ -71,6 +71,12 @@
     "estimated_total": "Estimated total:",
     "taxes_included": "Taxes included.",
     "discounts_shipping": "Discounts and shipping calculated at checkout.",
-    "check_out": "Check out"
+    "check_out": "Check out",
+    "currency_sign": "₴",
+    "currency": "UAH"
+  },
+  "counter": {
+    "+": "+",
+    "-": "-"
   }
 }

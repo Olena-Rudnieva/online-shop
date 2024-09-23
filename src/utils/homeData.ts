@@ -2,25 +2,25 @@ export const productsData = [
   {
     id: 1,
     title: "home.items.title_one",
-    price: "home.items.price_one",
+    price: 200,
     media: ["home.items.media_one", "home.items.media_two", "home.items.media_three"]
   },
   {
     id: 2,
     title: "home.items.title_two",
-    price: "home.items.price_two",
+    price: 200,
     media: ["home.items.media_one", "home.items.media_two", "home.items.media_three"]
   },
   {
     id: 3,
     title: "home.items.title_three",
-    price: "home.items.price_three",
+    price: 200,
     media: ["home.items.media_one", "home.items.media_two", "home.items.media_three"]
   },
   {
     id: 4,
     title: "home.items.title_four",
-    price: "home.items.price_four",
+    price: 200,
     media: ["home.items.media_one", "home.items.media_two", "home.items.media_three"]
   },
 ];
