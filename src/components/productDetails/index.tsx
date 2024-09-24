@@ -9,6 +9,7 @@ import { useCart } from "@/context";
 import { Modal } from "../modal";
 import { AddToCartModal } from "../modal/components";
 import { Button } from "../button";
+import { useRouter } from "next/navigation";
 
 interface ProductDetailsProps {
   product: Product;
@@ -17,6 +18,7 @@ interface ProductDetailsProps {
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { t } = useTranslation();
   const { addToCart } = useCart();
+  const router = useRouter();
 
   const {
     quantity,
@@ -31,6 +33,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const handleAddToCart = () => {
     addToCart(product, quantity);
     openModal();
+  };
+
+  const handleCheckout = () => {
+    addToCart(product, quantity);
+    router.push("/payments");
   };
 
   return (
@@ -88,7 +95,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           </Button>
           <Button
             className="bg-customDarkGray text-white w-full hover:bg-customDarkGrayDark"
-            onClick={() => {}}
+            onClick={handleCheckout}
           >
             {t("product_details.button_buy")}
           </Button>

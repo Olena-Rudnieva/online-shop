@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { CartSummary, CartTable } from "./components";
-import { Product } from "@/api";
-
-interface CartType {
-  product: Product;
-  quantityInCart: number;
-}
+import { CartType } from "@/api";
 
 interface CartDataProps {
   cart: CartType[];

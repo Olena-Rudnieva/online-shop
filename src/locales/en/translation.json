@@ -80,6 +80,15 @@
     "-": "-"
   },
   "payments": {
-    "title": "Check out"
+    "title": "Check out",
+    "first_name": "Name",
+    "last_name": "Last name",
+    "phone": "Phone",
+    "email": "Email",
+    "country": "Country",
+    "city": "City",
+    "submit": "Check out",
+    "select_country": "Ukraine",
+    "country_ukraine": "Ukraine"
   }
 }

@@ -24,20 +24,6 @@ export interface Token {
   token: string;
 }
 
-export interface User {
-  userId: number;
-  name: string;
-  lastName: string;
-  role: string;
-  password: string;
-  email: string;
-  phone: string;
-  address: string; 
-  token: string | null;
-  refreshToken: string | null;
-  tokenExpiringIn: string;
-}
-
 export interface Product {
   id: number,
   title: string;
@@ -49,11 +35,22 @@ export interface Product {
   quantity?: number
 }
 
-export interface Order {
-  orderId: number;
-  ownerId: number;
-  products: Product[];
-  payment?: boolean;
-  createdAt?: string;
-  
+export interface CartType {
+  product: Product;
+  quantityInCart: number;
 }
+
+export interface Payment {
+  id: number;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
+  deliveryCountry: string;
+  city: string;
+  address?: string;
+  deliveryType: string;
+  status: string;  
+  products: CartType[]
+}
+

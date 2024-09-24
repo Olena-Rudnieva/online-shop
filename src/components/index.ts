@@ -12,4 +12,8 @@ export * from './reviewSection'
 export * from './modal'
 export * from './button'
 export * from './cartData'
+export * from './input'
+
+
+
 
