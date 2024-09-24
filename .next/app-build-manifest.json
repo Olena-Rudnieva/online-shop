@@ -1,10 +1,10 @@
 {
   "pages": {
-    "/[locale]/cart/page": [
+    "/[locale]/payments/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/[locale]/cart/page.css",
-      "static/chunks/app/[locale]/cart/page.js"
+      "static/css/app/[locale]/payments/page.css",
+      "static/chunks/app/[locale]/payments/page.js"
     ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
@@ -36,10 +36,11 @@
       "static/css/app/[locale]/page.css",
       "static/chunks/app/[locale]/page.js"
     ],
-    "/[locale]/payments/page": [
+    "/[locale]/cart/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/payments/page.js"
+      "static/css/app/[locale]/cart/page.css",
+      "static/chunks/app/[locale]/cart/page.js"
     ]
   }
 }

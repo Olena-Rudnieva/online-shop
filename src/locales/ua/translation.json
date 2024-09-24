@@ -80,6 +80,15 @@
     "-": "-"
   },
   "payments": {
-    "title": "Оформити замовлення"
+    "title": "Оформити замовлення",
+    "first_name": "Ім'я",
+    "last_name": "Прізвище",
+    "phone": "Телефон",
+    "email": "Email",
+    "country": "Країна доставки",
+    "city": "Місто",
+    "submit": "Оформити замовлення",
+    "select_country": "Україна",
+    "country_ukraine": "Україна"
   }
 }
