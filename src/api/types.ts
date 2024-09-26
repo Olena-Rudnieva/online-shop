@@ -24,6 +24,18 @@ export interface Token {
   token: string;
 }
 
+export interface UserData {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
+  deliveryCountry: string;
+  city: string;
+  street?: string;
+  house?: string;
+  apartment?: string;
+}
+
 export interface Product {
   id: number,
   title: string;

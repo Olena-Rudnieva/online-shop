@@ -15,11 +15,11 @@ export const apiPaths = {
       updatePassword: (userId: number) => `/users/changePassword/${userId}`,
     },
     products: {
-        getProducts: () => "/products",
-        getOneProduct: (id: number) => `/products/${id}`,
-        createProduct: () => "/products",
-        updateProduct: (id: number) => `/products/${id}`,
-        deleteProduct: (id: number) => `/products/${id}`,
+      getProducts: () => "/products",
+      getOneProduct: (id: number) => `/products/${id}`,
+      createProduct: () => "/products",
+      updateProduct: (id: number) => `/products/${id}`,
+      deleteProduct: (id: number) => `/products/${id}`,
       },
     cart: {
       getCart: () => "/cart",
@@ -38,10 +38,10 @@ export const apiPaths = {
     },
     payments: {
       getPayments: () => "/payments",
-      // getOneOrder: (id: number) => `/orders/${id}`,
-      // createOrder: () => "/orders",
-      // updateOrder: (id: number) => `/orders/${id}`,
-      // deleteOrder: (id: number) => `/orders/${id}`,
+      getOnePayment: (id: number) => `/payments/${id}`,
+      createPayment: () => "/payments",
+      updatePayment: (id: number) => `/payments/${id}`,
+      deletePayment: (id: number) => `/payments/${id}`,
     }
   };
   

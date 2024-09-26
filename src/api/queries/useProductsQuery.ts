@@ -6,8 +6,6 @@ export const useProductsQuery = () => {
     return useQuery({
       queryKey: [QUERY_KEYS.PRODUCTS],
       queryFn:  () =>  apiHandlers.products.list().then((data) => data.data)
-   
-
     });
   };
 

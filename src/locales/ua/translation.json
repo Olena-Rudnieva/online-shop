@@ -89,6 +89,21 @@
     "city": "Місто",
     "submit": "Оформити замовлення",
     "select_country": "Україна",
-    "country_ukraine": "Україна"
+    "country_ukraine": "Україна",
+    "select_city": "Введіть місто",
+    "delivery_title": "Доставка",
+    "delivery_empty_text": "Для вибору доставки і оплати вкажіть ваше місто",
+    "delivery_nova_poshta_title": "Самовивіз з відділення «Нова Пошта»",
+    "delivery_nova_poshta_text": "Виберіть відділення в якому ви хочете забрати ваше замовлення",
+    "delivery_nova_poshta_select": "Виберіть відділення",
+    "delivery_carries_rates": "За тарифами перевізника",
+    "delivery_courier_title": "Кур'єром «Нова Пошта» на вашу адресу",
+    "delivery_courier_text": "Вкажіть адресу куди кур'єр доставить ваше замовлення",
+    "delivery_courier_street": "Вулиця",
+    "delivery_courier_house": "Будинок",
+    "delivery_courier_apartment": "Квартира",
+    "payment_title": "Оплата",
+    "payment_bank_transfer_title": "Сплата за реквізитами ФОП",
+    "payment_cash_on_delivery_title": "Післяплата у відділенні Нової Пошти"
   }
 }

@@ -28,7 +28,7 @@ export const Input = ({
   disabled = false,
 }: InputProps) => {
   return (
-    <div className="w-[400px] flex flex-col  gap-[8px]">
+    <div className="w-[520px] flex flex-col  gap-[8px]">
       <label className={`text-[14px] text-foreground`}>{label}</label>
       <Controller
         control={control}

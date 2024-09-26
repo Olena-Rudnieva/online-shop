@@ -22,4 +22,7 @@ export const contactsFormSchema = yup.object().shape({
     .email("Invalid email address"),
   deliveryCountry: yup.string().required("Country is required"),
   city: yup.string().required("City is required"),
+  street: yup.string(),
+  house: yup.string(),
+  apartment: yup.string(),
 });

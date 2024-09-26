@@ -89,6 +89,21 @@
     "city": "City",
     "submit": "Check out",
     "select_country": "Ukraine",
-    "country_ukraine": "Ukraine"
+    "country_ukraine": "Ukraine",
+    "select_city": "Enter city",
+    "delivery_title": "Delivery",
+    "delivery_empty_text": "To select delivery and payment, please enter your city",
+    "delivery_nova_poshta_title": "Pickup from Nova Poshta branch",
+    "delivery_nova_poshta_text": "Select the branch where you want to pick up your order",
+    "delivery_nova_poshta_select": "Select the branch",
+    "delivery_carries_rates": "According to the carrier's rates",
+    "delivery_courier_title": "By Nova Poshta courier to your address",
+    "delivery_courier_text": "Enter the address where the courier will deliver your order",
+    "delivery_courier_street": "Street",
+    "delivery_courier_house": "House",
+    "delivery_courier_apartment": "Apartment",
+    "payment_title": "Payment",
+    "payment_bank_transfer_title": "Payment through sole proprietor's bank details",
+    "payment_cash_on_delivery_title": "Cash on delivery at a Nova Poshta branch"
   }
 }

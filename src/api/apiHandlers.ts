@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { apiPaths } from './apiPaths';
 import { deleteData, getData, patchData, postData } from './crudHandlers';
-import { Data, RefreshToken, Token, Product } from './types';
+import { Product, Payment } from './types';
 
 export const apiHandlers = {
 
@@ -22,5 +22,11 @@ export const apiHandlers = {
     delete(id: number): Promise<AxiosResponse<void>> {
       return deleteData<void>(apiPaths.products.deleteProduct(id));
     },
+  },
+  payments: {
+  create(data: Partial<Payment>): Promise<AxiosResponse<Payment>> {
+    return postData<Payment>(apiPaths.payments.createPayment(), { data });
+  },
+  
   },
 };

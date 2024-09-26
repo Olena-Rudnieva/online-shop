@@ -13,6 +13,9 @@ export * from './modal'
 export * from './button'
 export * from './cartData'
 export * from './input'
+export * from './cityAutoComplete'
+export * from './select'
+export * from './paymentsData'
 
 
 
