@@ -4,14 +4,14 @@
     "catalog": "Каталог"
   },
   "home": {
-    "hero_title": "Dyson",
+    "hero_title": "My Store",
     "hero_text": "пропонує",
     "featured_products_title": "Рекомендовані товари",
     "products_title": "Товари",
     "subscribe": "Підпишіться на нашу розсилку",
-    "currency": "UAH",  
-    "reviews": "Відгуки", 
-    "no_products": "Немає товарів", 
+    "currency": "UAH",
+    "reviews": "Відгуки",
+    "no_products": "Немає товарів",
     "items": {
       "media_one": "/images/productCard1.svg",
       "title_one": "Приклад title",
@@ -38,7 +38,7 @@
     "highest_price": "Найвища ціна ₴"
   },
   "product_details": {
-    "store_name": "Dyson store",
+    "store_name": "My store",
     "title": "Test",
     "price": "10,00",
     "taxes": "Taxes included.",
@@ -49,10 +49,10 @@
     "button_buy": "Купити зараз",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iste laboriosam placeat hic ipsam reprehenderit tempore repellendus eum necessitatibus, enim beatae blanditiis quaerat ullam incidunt non! Quae dolorem quasi sint!",
     "default_description": "Немає опису",
-     "not_found": "Продукт не знайдено"
+    "not_found": "Продукт не знайдено"
   },
   "footer": {
-    "copyrights": "© 2024, Dyson Store Powered by Shopify",
+    "copyrights": "© 2024, My Store",
     "policy": "Privacy policy"
   },
   "modal": {

@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { Product } from "@/api";
-import { useTranslation } from "react-i18next";
-import { Carousel } from "../carousel";
-import { Counter } from "../counter";
-import { useCount, useModal } from "../../hooks";
-import { useCart } from "@/context";
-import { Modal } from "../modal";
-import { AddToCartModal } from "../modal/components";
-import { Button } from "../button";
-import { useRouter } from "next/navigation";
+import { Product } from '@/api';
+import { useTranslation } from 'react-i18next';
+import { Carousel } from '../carousel';
+import { Counter } from '../counter';
+import { useCount, useModal } from '../../hooks';
+import { useCart } from '@/context';
+import { Modal } from '../modal';
+import { AddToCartModal } from '../modal/components';
+import { Button } from '../button';
+import { useRouter } from 'next/navigation';
 
 interface ProductDetailsProps {
   product: Product;
@@ -19,6 +19,8 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { t } = useTranslation();
   const { addToCart } = useCart();
   const router = useRouter();
+
+  console.log('product', product);
 
   const {
     quantity,
@@ -37,7 +39,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
 
   const handleCheckout = () => {
     addToCart(product, quantity);
-    router.push("/payments");
+    router.push('/payments');
   };
 
   return (
@@ -56,7 +58,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
               alt={`${product.title} thumbnail`}
               onClick={() => handleImageClick(item.media)}
               className={`w-[60px] md:w-[100px] h-[60px] md:h-[100px] object-contain cursor-pointer border ${
-                activeImage === item.media ? "border-black" : "border-gray-300"
+                activeImage === item.media ? 'border-black' : 'border-gray-300'
               }`}
             />
           )}
@@ -65,21 +67,21 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
 
       <div className="flex flex-col w-[345px]">
         <p className="text-customGray text-[10px] leading-[12px] tracking-[1.3px] uppercase">
-          {t("product_details.store_name")}
+          {t('product_details.store_name')}
         </p>
         <h2 className="text-foreground text-[30px] md:text-[40px] leading-[52px] tracking-[0.6px] mb-[15px]">
           {product.title}
         </h2>
         <p className="text-[16px] text-customGray leading-[24px] tracking-[0.6px] ">
-          {t("cart.currency_sign")}
-          {product.price} {t("home.currency")}
+          {t('cart.currency_sign')}
+          {product.price} {t('home.currency')}
         </p>
         <p className="text-[12px] text-customGray leading-[20px] tracking-[0.7px] mb-[15px]">
-          {t("product_details.taxes")}
+          {t('product_details.taxes')}
         </p>
         <p className="text-[13px] text-customGray leading-[20px] tracking-[0.4px]">
-          {t("product_details.quantity_text")} ({quantity} {""}
-          {t("product_details.in_cart")})
+          {t('product_details.quantity_text')} ({quantity} {''}
+          {t('product_details.in_cart')})
         </p>
         <Counter
           quantity={quantity}
@@ -91,13 +93,13 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             onClick={handleAddToCart}
             className="w-full hover:border-black"
           >
-            {t("product_details.button_add")}
+            {t('product_details.button_add')}
           </Button>
           <Button
             className="bg-customDarkGray text-white w-full hover:bg-customDarkGrayDark"
             onClick={handleCheckout}
           >
-            {t("product_details.button_buy")}
+            {t('product_details.button_buy')}
           </Button>
         </div>
         <div className="overflow-y-auto max-h-[400px]">
@@ -105,7 +107,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             className="text-[16px] text-customGray leading-[28px] tracking-[0.6px]"
             dangerouslySetInnerHTML={{
               __html:
-                product.description || "product_details.default_description",
+                product.description || 'product_details.default_description',
             }}
           />
         </div>

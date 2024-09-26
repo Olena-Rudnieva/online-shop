@@ -1,4 +1,4 @@
-// File: /Users/vrb-work/Desktop/projects/dyson-store /src/app/layout.tsx
+// File: C:\Users\Admin\Documents\GitHub\online-shop\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
