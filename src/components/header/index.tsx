@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { Drawer, HeaderNavigation } from "./components";
-import MobileMenu from "../../../public/icons/menu.svg";
-import { useCallback, useState } from "react";
-import { useCart } from "@/context";
+import Link from 'next/link';
+import { Drawer, HeaderNavigation } from './components';
+import MobileMenu from '../../../public/icons/menu.svg';
+import { useCallback, useState } from 'react';
+import { useCart } from '@/context';
+import Image from 'next/image';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +20,8 @@ export const Header = () => {
   }, []);
 
   const cartIconSrc = !cart.length
-    ? "/icons/cart.svg"
-    : "/icons/cartWithProduct.svg";
+    ? '/icons/cart.svg'
+    : '/icons/cartWithProduct.svg';
 
   return (
     <header className="relative w-full flex justify-center">
@@ -32,7 +33,13 @@ export const Header = () => {
         />
 
         <Link href="/">
-          <p className="text-[24px] text-customGray tracking-[0.6px]">Logo</p>
+          {/* <p className="text-[24px] text-customGray tracking-[0.6px]">Logo</p> */}
+          <Image
+            src="/images/shopping-bag.jpg"
+            alt="Logo"
+            width={50}
+            height={50}
+          />
         </Link>
         <div className="relative">
           <Link href="/cart">

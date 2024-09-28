@@ -1,10 +1,10 @@
 {
   "pages": {
-    "/[locale]/page": [
+    "/[locale]/confirmation/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/[locale]/page.css",
-      "static/chunks/app/[locale]/page.js"
+      "static/css/app/[locale]/confirmation/page.css",
+      "static/chunks/app/[locale]/confirmation/page.js"
     ],
     "/[locale]/layout": [
       "static/chunks/webpack.js",
@@ -30,17 +30,23 @@
       "static/css/app/[locale]/products/[id]/page.css",
       "static/chunks/app/[locale]/products/[id]/page.js"
     ],
+    "/[locale]/payments/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/[locale]/payments/page.css",
+      "static/chunks/app/[locale]/payments/page.js"
+    ],
     "/[locale]/cart/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/[locale]/cart/page.css",
       "static/chunks/app/[locale]/cart/page.js"
     ],
-    "/[locale]/payments/page": [
+    "/[locale]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/[locale]/payments/page.css",
-      "static/chunks/app/[locale]/payments/page.js"
+      "static/css/app/[locale]/page.css",
+      "static/chunks/app/[locale]/page.js"
     ]
   }
 }

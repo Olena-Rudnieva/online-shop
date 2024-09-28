@@ -12,7 +12,7 @@ export const Hero = () => {
         <h1 className="relative z-20 text-white text-[48px] leading-[68px] tracking-[0.6px] mb-[10px]">
           {t('home.hero_title')}
         </h1>
-        <p className="relative z-20 text-customWhite text-[18px] leading-[32px] tracking-[0.6px]">
+        <p className="relative z-20 text-customWhite text-[24px] leading-[32px] tracking-[0.6px]">
           {t('home.hero_text')}
         </p>
       </div>

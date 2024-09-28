@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Controller } from "react-hook-form";
-import { useState } from "react";
-import { useCitiesQuery } from "@/api/queries";
+import { Controller } from 'react-hook-form';
+import { useState } from 'react';
+import { useCitiesQuery } from '@/api/queries';
 
 interface City {
   Ref: string;
@@ -26,13 +26,13 @@ export const CityAutoComplete = ({
   placeholder,
   onChange,
 }: CityInputProps) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
 
   const { data: cities = [], isLoading } = useCitiesQuery(query);
 
   return (
-    <div className="w-[520px] flex flex-col gap-[8px]">
+    <div className="w-[350px] flex flex-col gap-[8px]">
       <label className="text-[14px] text-foreground">{label}</label>
       <Controller
         control={control}
@@ -67,7 +67,7 @@ export const CityAutoComplete = ({
                       className="p-2 hover:bg-gray-100 cursor-pointer"
                       onClick={() => {
                         setSelectedCity(city);
-                        setQuery("");
+                        setQuery('');
                         field.onChange(city.Description);
                         onChange && onChange(city);
                       }}

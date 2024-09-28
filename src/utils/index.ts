@@ -1,1 +1,2 @@
-export * from './homeData'
+export * from './homeData';
+export * from './calculateTotalAmount';

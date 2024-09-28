@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Product } from "@/api";
-import { useTranslation } from "react-i18next";
-import { useRouter } from "next/navigation";
+import { Product } from '@/api';
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {
   card: Product;
@@ -30,7 +30,7 @@ export const ProductCard = ({ card }: ProductCardProps) => {
         {t(card.title)}
       </h3>
       <p className="text-[16px] text-customGray leading-[24px] tracking-[0.6px] mb-[20px] text-center">
-        ₴{card.price} {t("home.currency")}
+        ₴{card.price} {t('home.currency')}
       </p>
     </div>
   );

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { ProductCard } from "../productCard";
-import { useTranslation } from "react-i18next";
-import { Product } from "@/api";
-import { Carousel } from "../carousel";
+import { ProductCard } from '../productCard';
+import { useTranslation } from 'react-i18next';
+import { Product } from '@/api';
+import { Carousel } from '../carousel';
 
 interface FeaturedProductsProps {
   products: Product[] | undefined;
@@ -13,7 +13,7 @@ export const FeaturedProducts = ({ products }: FeaturedProductsProps) => {
   const { t } = useTranslation();
 
   if (!products) {
-    return <div> {t("home.no_products")}</div>;
+    return <div> {t('home.no_products')}</div>;
   }
 
   return (
@@ -23,7 +23,7 @@ export const FeaturedProducts = ({ products }: FeaturedProductsProps) => {
       </div>
       <div className="px-[15px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[44px] flex flex-col w-full max-w-[1200px]">
         <h2 className="text-foreground text-[20px] leading-[32px] tracking-[0.6px] mb-[30px]">
-          {t("home.featured_products_title")}
+          {t('home.featured_products_title')}
         </h2>
         <div className="flex justify-center items-center md:hidden gap-[8px]">
           <ProductCard card={products[0]} key={products[0].id} />

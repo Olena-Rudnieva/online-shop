@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { useCart } from "@/context";
-import { useBranchesQuery, useCreatePaymentMutation, UserData } from "@/api";
-import { FieldValues, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { contactsFormSchema } from "@/shemas";
-import { useTranslation } from "react-i18next";
+import { useEffect, useState } from 'react';
+import { useCart } from '@/context';
+import { useBranchesQuery, useCreatePaymentMutation, UserData } from '@/api';
+import { FieldValues, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { contactsFormSchema } from '@/shemas';
+import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/navigation';
 
 interface Branch {
   id: string;
@@ -12,9 +13,10 @@ interface Branch {
 }
 
 export const usePaymentsData = () => {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
   const { t } = useTranslation();
   const { mutate: createElementMutation } = useCreatePaymentMutation();
+  const router = useRouter();
 
   const {
     control,
@@ -36,10 +38,10 @@ export const usePaymentsData = () => {
     Description: string;
   }>(null);
   const [selectedBranchDescription, setSelectedBranchDescription] =
-    useState<string>("");
+    useState<string>('');
 
-  const [deliveryType, setDeliveryType] = useState<string>("novaPoshta");
-  const [paymentType, setPaymentType] = useState<string>("bankTransfer");
+  const [deliveryType, setDeliveryType] = useState<string>('novaPoshta');
+  const [paymentType, setPaymentType] = useState<string>('bankTransfer');
 
   const {
     data: branches,
@@ -54,7 +56,7 @@ export const usePaymentsData = () => {
   }, [branches]);
 
   useEffect(() => {
-    setValue("deliveryCountry", t("payments.country_ukraine"));
+    setValue('deliveryCountry', t('payments.country_ukraine'));
   }, [setValue, t]);
 
   const branchOptions = branches
@@ -75,25 +77,31 @@ export const usePaymentsData = () => {
 
   const onSubmit = async (data: FieldValues) => {
     const address =
-      deliveryType === "courier"
-        ? [data.street, data.house, data.apartment].filter(Boolean).join(", ")
+      deliveryType === 'courier'
+        ? [data.street, data.house, data.apartment].filter(Boolean).join(', ')
         : selectedBranchDescription ||
-          [data.street, data.house, data.apartment].filter(Boolean).join(", ");
+          [data.street, data.house, data.apartment].filter(Boolean).join(', ');
 
     const paymentData = {
       firstName: data.firstName,
       lastName: data.lastName,
       phoneNumber: data.phoneNumber,
       email: data.email,
-      deliveryCountry: "Ukraine",
+      deliveryCountry: 'Ukraine',
       city: selectedCity?.Description,
       address: address,
       deliveryType: deliveryType,
-      status: "New",
+      paymentType: paymentType,
+      status: 'New',
       products: cart,
     };
 
-    createElementMutation(paymentData);
+    createElementMutation(paymentData, {
+      onSuccess: () => {
+        router.push('/confirmation');
+        clearCart();
+      },
+    });
   };
 
   return {
@@ -114,5 +122,6 @@ export const usePaymentsData = () => {
     branchOptions,
     onBranchSelect,
     onSubmit,
+    cart,
   };
 };

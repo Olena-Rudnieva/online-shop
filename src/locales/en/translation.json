@@ -104,6 +104,12 @@
     "delivery_courier_apartment": "Apartment",
     "payment_title": "Payment",
     "payment_bank_transfer_title": "Payment through sole proprietor's bank details",
-    "payment_cash_on_delivery_title": "Cash on delivery at a Nova Poshta branch"
+    "payment_cash_on_delivery_title": "Cash on delivery at a Nova Poshta branch",
+    "sidebar_title": "Order",
+    "sidebar_total": "Total"
+  },
+  "confirmation": {
+    "title": "Order placed",
+    "text": "Thank you for your order! It will be processed shortly."
   }
 }

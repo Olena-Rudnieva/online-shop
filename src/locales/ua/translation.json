@@ -104,6 +104,12 @@
     "delivery_courier_apartment": "Квартира",
     "payment_title": "Оплата",
     "payment_bank_transfer_title": "Сплата за реквізитами ФОП",
-    "payment_cash_on_delivery_title": "Післяплата у відділенні Нової Пошти"
+    "payment_cash_on_delivery_title": "Післяплата у відділенні Нової Пошти",
+    "sidebar_title": "Замовлення",
+    "sidebar_total": "Всього"
+  },
+  "confirmation": {
+    "title": "Замовлення оформлено",
+    "text": "Дякуємо за замовлення! Воно буде оброблено найближчим часом."
   }
 }

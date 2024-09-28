@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Control, Controller, FieldError } from "react-hook-form";
+import { Control, Controller, FieldError } from 'react-hook-form';
 
 interface InputProps {
   name: string;
@@ -21,14 +21,14 @@ export const Input = ({
   label,
   placeholder,
   sx,
-  type = "text",
+  type = 'text',
   required = false,
   error,
   defaultValue,
   disabled = false,
 }: InputProps) => {
   return (
-    <div className="w-[520px] flex flex-col  gap-[8px]">
+    <div className="w-[350px] flex flex-col  gap-[8px]">
       <label className={`text-[14px] text-foreground`}>{label}</label>
       <Controller
         control={control}
