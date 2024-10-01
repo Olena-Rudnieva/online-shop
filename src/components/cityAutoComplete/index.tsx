@@ -32,7 +32,7 @@ export const CityAutoComplete = ({
   const { data: cities = [], isLoading } = useCitiesQuery(query);
 
   return (
-    <div className="w-[350px] flex flex-col gap-[8px]">
+    <div className="w-full md:w-[270px] xl:w-[350px] flex flex-col gap-[8px]">
       <label className="text-[14px] text-foreground">{label}</label>
       <Controller
         control={control}

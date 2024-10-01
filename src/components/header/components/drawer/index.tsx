@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import CloseIcon from "../../../../../public/icons/cross.svg";
-import { HeaderNavigation } from "../headerNavigation";
+import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import CloseIcon from '../../../../../public/icons/cross.svg';
+import { HeaderNavigation } from '../headerNavigation';
+import { FiltersListBox } from '@/components/filters/components';
+import { useFilterContext } from '@/context';
 
 interface DrawerProps {
   isOpen: boolean;
@@ -12,16 +14,17 @@ interface DrawerProps {
 export const Drawer = ({ isOpen, onClose, filter }: DrawerProps) => {
   const drawerRef = useRef<HTMLDivElement | null>(null);
   const { t } = useTranslation();
+  const { minPrice, maxPrice, setMinPrice, setMaxPrice } = useFilterContext();
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     };
   }, [isOpen]);
 
@@ -30,10 +33,10 @@ export const Drawer = ({ isOpen, onClose, filter }: DrawerProps) => {
       onClose();
     };
 
-    window.addEventListener("orientationchange", handleOrientationChange);
+    window.addEventListener('orientationchange', handleOrientationChange);
 
     return () => {
-      window.removeEventListener("orientationchange", handleOrientationChange);
+      window.removeEventListener('orientationchange', handleOrientationChange);
     };
   }, []);
 
@@ -44,22 +47,22 @@ export const Drawer = ({ isOpen, onClose, filter }: DrawerProps) => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
   return (
     <div
       className={`fixed inset-0 z-[99999] flex justify-end transform ${
-        isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+        isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
       } transition-all duration-500`}
     >
       <div
         className={`bg-white h-full w-[300px] shadow-md transition-transform duration-500 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         ref={drawerRef}
       >
@@ -75,11 +78,14 @@ export const Drawer = ({ isOpen, onClose, filter }: DrawerProps) => {
 
               {filter ? (
                 <div className="flex flex-col gap-[30px]">
-                  <p>{t("catalog.filter_sort")}:</p>
-                  <div className="flex flex-col gap-[20px] text-[14px]">
-                    <p>{t("catalog.availability")}</p>
-                    <p>{t("catalog.price")}</p>
-                  </div>
+                  <p>{t('catalog.filter_sort')}:</p>
+                  <FiltersListBox
+                    minPrice={minPrice}
+                    maxPrice={maxPrice}
+                    setMinPrice={setMinPrice}
+                    setMaxPrice={setMaxPrice}
+                    onClose={onClose}
+                  />
                 </div>
               ) : (
                 <div>

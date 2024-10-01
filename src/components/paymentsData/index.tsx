@@ -36,10 +36,10 @@ export const PaymentsData = () => {
   return (
     <div className="px-[15px] md:px-[32px] lg:px-[50px] py-[20px] lg:py-[36px] flex flex-col w-full mx-auto max-w-[1200px]">
       <div className="flex flex-col justify-start items-start">
-        <h1 className="text-[40px] text-customDarkGray leading-[52px] tracking-[0.6px] mb-[40px]">
+        <h1 className="text-[30px] md:text-[40px] text-customDarkGray leading-[42px] md:leading-[52px] tracking-[0.6px] mb-[40px]">
           {t('payments.title')}
         </h1>
-        <div className="flex gap-[55px] mb-[40px] items-start">
+        <div className="flex flex-col-reverse lg:flex-row gap-[55px] mb-[40px] items-start w-full">
           <ContactForm
             control={control}
             errors={errors}
@@ -69,7 +69,7 @@ export const PaymentsData = () => {
 
         <div className="flex justify-end w-full mt-[40px]">
           <Button
-            className="bg-customDarkGray text-white w-[300px] hover:bg-customDarkGrayDark"
+            className="bg-customDarkGray text-white w-[250px] md:w-[300px] hover:bg-customDarkGrayDark"
             type="submit"
             onClick={handleSubmit(onSubmit)}
           >

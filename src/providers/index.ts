@@ -1,2 +1,3 @@
-export * from './translationsProvider'
-export * from './cartProvider'
+export * from './translationsProvider';
+export * from './cartProvider';
+export * from './filterProvider';

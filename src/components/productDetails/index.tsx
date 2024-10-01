@@ -20,8 +20,6 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { addToCart } = useCart();
   const router = useRouter();
 
-  console.log('product', product);
-
   const {
     quantity,
     activeImage,

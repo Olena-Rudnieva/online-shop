@@ -33,7 +33,7 @@ export const ReviewSection = ({ reviews }: ReviewSectionProps) => {
         <h2 className="text-foreground text-[24px] leading-[32px] tracking-[0.6px] font-bold mb-[30px] text-center">
           {t('home.reviews')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] md:gap-[40px] mx-auto">
           {reviews.map((review) => (
             <div
               key={review.id}
